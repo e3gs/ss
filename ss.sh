@@ -45,7 +45,7 @@ while [ True ];do
 
     echo -e "序号 $green|$close       主机      $green|$close 说明"
     underline
-    awk 'BEGIN {FS=":"} {printf("\033[0;36m% 3s \033[m \033[0;32m|\033[m %15s \033[0;32m|\033[m %s\n",$1,$2,$6)}' $direc/*.lst
+    awk 'BEGIN {FS=":"} {printf("\033[0;36m% 3s \033[m \033[0;32m|\033[m %15s \033[0;32m|\033[m %s\n",$1,$2,$6) | "sort"}' $direc/*.lst
     underline
     read -p '[*] 选择主机: ' number
     pw="$direc/*.lst"
